@@ -5,7 +5,7 @@ class ProdutosController extends Controller
 {
     public function index()
     {
-        $dados = ['ola' => 'Mundo'];
-        return $dados;
+        $nome = 'Carlos';
+        return view('produtos', ['nome' => $nome]);
     }
 }
