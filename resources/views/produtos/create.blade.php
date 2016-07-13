@@ -1,8 +1,18 @@
 @extends('app')
 
+
 @section('content')
+    
     <div class="container">
         <h1>Novo Produto</h1>
+
+        @if ($errors->any())
+            <ul class="alert alert-warning">
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
 
         {!! Form::open(['url'=>'produtos/store']) !!}
 
