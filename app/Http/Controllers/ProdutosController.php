@@ -5,6 +5,7 @@ class ProdutosController extends Controller
 {
     public function index()
     {
-        return 'Olá mundo';
+        $dados = ['ola' => 'Mundo'];
+        return $dados;
     }
 }
