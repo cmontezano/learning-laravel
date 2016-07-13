@@ -10,4 +10,9 @@ class ProdutosController extends Controller
     {
         return view('produtos', ['produtos' => Produto::all()]);
     }
+
+    public function create()
+    {
+        return view('produtos.create');
+    }
 }
