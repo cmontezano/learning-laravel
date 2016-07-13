@@ -22,4 +22,11 @@ class ProdutosController extends Controller
 
         return redirect('produtos');
     }
+
+    public function destroy($id)
+    {
+        Produto::find($id)->delete();
+
+        return redirect('produtos');
+    }
 }
