@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Produto;
+use Illuminate\Http\Request;
 
 class ProdutosController extends Controller
 {
@@ -14,5 +15,12 @@ class ProdutosController extends Controller
     public function create()
     {
         return view('produtos.create');
+    }
+
+    public function store(Request $request)
+    {
+        Produto::create($request->all());
+
+        return redirect('produtos');
     }
 }
