@@ -29,4 +29,11 @@ class ProdutosController extends Controller
 
         return redirect('produtos');
     }
+
+    public function edit($id)
+    {
+        $produto = Produto::find($id);
+
+        return view('produtos.edit', compact('produto'));
+    }
 }
