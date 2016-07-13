@@ -1,9 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
+use App\Http\Requests\ProdutoRequest;
 use App\Produto;
-use Illuminate\Http\Request;
 
 class ProdutosController extends Controller
 {
