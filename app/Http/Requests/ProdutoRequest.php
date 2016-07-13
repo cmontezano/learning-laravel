@@ -24,7 +24,8 @@ class ProdutoRequest extends Request
     public function rules()
     {
         return [
-            //
+            'nome'      => 'required|min:5',
+            'descricao' => 'required'
         ];
     }
 }
