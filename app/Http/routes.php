@@ -1,12 +1,9 @@
 <?php
-Route::group(['middleware' => 'web'], function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
-    Route::get('produtos', 'ProdutosController@index');
-    Route::get('produtos/create', 'ProdutosController@create');
-    Route::post('produtos/store', 'ProdutosController@store');
-    Route::get('produtos/{id}/destroy', 'ProdutosController@destroy');
-    Route::get('produtos/{id}/edit', 'ProdutosController@edit');
-    Route::put('produtos/{id}/update', 'ProdutosController@update');
+Route::group(array('middleware' => 'web', 'prefix' => 'produtos'), function () {
+    Route::get('', 'ProdutosController@index');
+    Route::get('create', 'ProdutosController@create');
+    Route::post('store', 'ProdutosController@store');
+    Route::get('{id}/destroy', 'ProdutosController@destroy');
+    Route::get('{id}/edit', 'ProdutosController@edit');
+    Route::put('{id}/update', 'ProdutosController@update');
 });
