@@ -12,7 +12,7 @@ class CreateAvaliacaoProdutos extends Migration
      */
     public function up()
     {
-        Schema::create('avaliacao_produtos', function () {
+        Schema::create('avaliacao_produtos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('produto_id')->unsigned();
             $table->foreign('produto_id')->references('id')->on('produtos');
