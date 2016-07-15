@@ -14,7 +14,7 @@
             </ul>
         @endif
 
-        {!! Form::open(array('action' => array('ProdutosController@update', $produto->id), 'method' => 'put')) !!}
+        {!! Form::open(array('route' => array('produtos.update', $produto->id), 'method' => 'put')) !!}
 
         <div class="form-group">
             {!! Form::label('nome', 'Nome:') !!}
