@@ -21,7 +21,10 @@
                 <td>{{ $produto->id }}</td>
                 <td>{{ $produto->nome }}</td>
                 <td>{{ $produto->descricao }}</td>
-                <td></td>
+                <td>
+                    <a href="{{ route('produtos.edit', ['id' => $produto->id]) }}" class="btn-sm btn-success">Editar</a>
+                    <a href="{{ route('produtos.destroy', ['id' => $produto->id]) }}" class="btn-sm btn-danger">Remover</a>
+                </td>
             </tr>
         @endforeach
         </tbody>
