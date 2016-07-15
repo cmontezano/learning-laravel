@@ -10,4 +10,9 @@ class AvaliacaoProduto extends Model
         'nota',
         'comentario'
     );
+
+    public function produto()
+    {
+        return $this->belongsTo('App\Produto');
+    }
 }
