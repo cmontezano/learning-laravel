@@ -18,7 +18,7 @@ class CreateAvaliacaoProdutos extends Migration
             $table->foreign('produto_id')->references('id')->on('produtos');
             $table->smallInteger('nota');
             $table->text('comentario');
-            $table->timestamp();
+            $table->timestamps();
         });
     }
 
