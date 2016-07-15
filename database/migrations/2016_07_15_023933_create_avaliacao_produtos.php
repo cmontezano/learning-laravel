@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateAvaliacaoProdutos extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('avaliacao_produtos', function () {
+            $table->increments('id');
+            $table->integer('produto_id')->unsigned();
+            $table->foreign('produto_id')->references('id')->on('produtos');
+            $table->smallInteger('nota');
+            $table->text('comentario');
+            $table->timestamp();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('avaliacao_produtos');
+    }
+}
