@@ -1,5 +1,9 @@
 <?php
-Route::group(array('middleware' => 'web', 'prefix' => 'produtos'), function () {
+Route::group(array(
+    'middleware' => 'web',
+    'prefix' => 'produtos',
+    'where' => ['id' => '[0-9]+']), function () {
+    
     Route::get('', ['as' => 'produtos', 'uses' => 'ProdutosController@index']);
     
     Route::get('create', ['as' => 'produtos.create', 'uses' => 'ProdutosController@create']);
